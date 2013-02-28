@@ -31,6 +31,7 @@ then
   ln -s ~/dotfiles/vimrc ~/.vimrc
 fi
 
+# install zsh config
 if [ ! -f ~/.zshrc ];
 then 
   ln -s ~/dotfiles/zshrc ~/.zshrc
