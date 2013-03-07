@@ -24,11 +24,21 @@ fi
 # install vim config
 if [ ! -f ~/.vimrc ];
 then 
-  ln -s ~/dotfiles/vimrc ~/.vimrc
+  if [[ `hostname -s` = h*-hsa* ]];
+  then
+    ln -s ~/dotfiles/vimrc ~/.vimrc.internal
+  else
+    ln -s ~/dotfiles/vimrc ~/.vimrc
+  fi
 elif [ $force = true ];
 then
   rm -i ~/.vimrc
-  ln -s ~/dotfiles/vimrc ~/.vimrc
+  if [[ `hostname -s` = h*-hsa* ]];
+  then
+    ln -s ~/dotfiles/vimrc.internal ~/.vimrc
+  else
+    ln -s ~/dotfiles/vimrc ~/.vimrc
+  fi
 fi
 
 # install zsh config
