@@ -1,6 +1,14 @@
 set number
 nmap <F2> :set invnumber<CR>
 
+" Permanently set statusline
+set laststatus=2
+
+" indentation -- http://vim.wikia.com/wiki/Indenting_source_code
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
 " Vundle config 
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -37,3 +45,8 @@ filetype plugin indent on     " required!
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
+
+" buftabs configs
+let g:buftabs_only_basename=1
+let g:buftabs_in_statusline=1
+let g:buftabs_active_highlight_group="Visual"
