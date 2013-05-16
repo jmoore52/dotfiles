@@ -12,6 +12,9 @@ case "$TERM" in
     ;;
 esac
 
+# set env to include dotfiles dir
+export PATH=${PATH}:~/dotfiles
+
 # change directory without "cd" command
 setopt auto_cd
 
