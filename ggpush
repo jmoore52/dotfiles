@@ -1,5 +1,7 @@
 #!/usr/bin/expect -f
 
+set rep [lindex $argv 0]
+
 # procedure to attempt connecting; result 0 if OK, 1 otherwise
 proc connect {} {
   expect {
@@ -28,7 +30,7 @@ match_max 100000
 
 set ret [connect]
 if { $ret == 0 } {
-  send "cd zebralite\r"
+  send "cd $rep\r"
   send "git push\r"
   expect "Username*"
   expect_user -re "(.*)\n"

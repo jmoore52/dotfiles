@@ -21,6 +21,7 @@ setopt auto_cd
 alias -s c=vim
 alias -s h=vim
 
+export EDITOR=vim
 uname=`uname`
 if [ $uname = "Linux" ];
 then
@@ -52,5 +53,7 @@ alias gs='git status | less'
 alias gl='git log'
 alias gpush='git push'
 alias gpull='git pull'
+
+alias ctgen='ctags -R *'
 
 alias refresh='source ~/.zshrc'
