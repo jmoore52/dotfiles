@@ -1,6 +1,13 @@
 #!/usr/bin/expect -f
 
-set rep [lindex $argv 0]
+#set rep [lindex $argv 0]
+set rep [exec /bin/zsh -c "pwd"]
+
+if {[string match "*/dotfiles"  $rep]} {
+  set rep "${rep}.git"
+}
+
+puts "$rep"
 
 # procedure to attempt connecting; result 0 if OK, 1 otherwise
 proc connect {} {
