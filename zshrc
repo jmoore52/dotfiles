@@ -47,8 +47,9 @@ alias tl='tmux ls'
 # git
 alias g='git'
 alias ga='git add'
-alias gd='git diff'
+alias gb='git branch'
 alias gc='git commit -a -m'
+alias gd='git diff'
 alias gs='git status | less'
 alias gl='git log'
 alias gpush='git push'
@@ -57,3 +58,10 @@ alias gpull='git pull'
 alias ctgen='ctags -R *'
 
 alias refresh='source ~/.zshrc'
+
+# zebralite specific
+alias zl="cd ~/zebralite"
+alias ctrl="cd ~/zebralite/controller"
+alias os="cd ~/zebralite/ospf6-sibling"
+alias bs="cd ~/zebralite/bgp-sibling"
+alias pnt="cd ~/zebralite/punter"
