@@ -1,5 +1,15 @@
 set number
+
 nmap <F2> :set invnumber<CR>
+
+let mapleader=","
+map <Leader>w :w<CR>
+
+" Reload
+map <Leader>r :so $MYVIMRC<CR>
+
+" Open header file
+map <Leader>h :split %<.h<CR>
 
 " Permanently set statusline
 set laststatus=2
@@ -25,6 +35,7 @@ Bundle 'gmarik/vundle'
 
 " original repos on github
 Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-unimpaired'
 " Bundle 'fholgado/minibufexpl.vim'
 
 " vim-scripts repos
@@ -49,7 +60,11 @@ filetype plugin indent on     " required!
 " buftabs configs
 let g:buftabs_only_basename=1
 let g:buftabs_in_statusline=1
-let g:buftabs_active_highlight_group="Visual"
+
+" Custom highlight group
+hi Buftabs ctermfg=Yellow ctermbg=Blue
+
+let g:buftabs_active_highlight_group="Buftabs"
 
 " Ctags
 set tags=./tags;/
