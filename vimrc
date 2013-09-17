@@ -1,7 +1,5 @@
 set number
 
-nmap <F2> :set invnumber<CR>
-
 let mapleader=","
 map <Leader>w :w<CR>
 
@@ -9,7 +7,13 @@ map <Leader>w :w<CR>
 map <Leader>r :so $MYVIMRC<CR>
 
 " Open header file
-map <Leader>h :split %<.h<CR>
+map <Leader>h :badd %<.h<CR>
+
+" Split current window
+map <Leader>s :split<CR>
+
+" Split header file
+map <Leader>sh :split %<.h<CR>
 
 " Permanently set statusline
 set laststatus=2
