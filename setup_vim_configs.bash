@@ -1,5 +1,16 @@
 #!/bin/bash
 
+force=false
+options=":f"
+
+while getopts $options option
+do
+  case $option in
+    f ) force=true;;
+    * ) force=false;;
+  esac
+done
+
 if [ ! -d ~/.vim ];
 then
   mkdir ~/.vim
@@ -7,9 +18,12 @@ fi
 
 cd ~/.vim
 
-#if [[ `hostname -s` = h*-hsa* ]];
-#then
-#  git clone ssh://hasenov@10.100.1.1/~/.vim/bundle/vundle bundle/vundle
-#else
-git clone https://github.com/gmarik/vundle bundle/vundle
-#fi
+if [ ! -d bundle/vundle ];
+then
+  git clone https://github.com/gmarik/vundle bundle/vundle
+elif [ $force = true ];
+then
+  rm -ri bundle/vundle
+  git clone https://github.com/gmarik/vundle bundle/vundle
+fi
+

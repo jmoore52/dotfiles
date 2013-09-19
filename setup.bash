@@ -40,3 +40,13 @@ then
   rm -i ~/.zshrc
   ln -s ~/dotfiles/zshrc ~/.zshrc
 fi
+
+# install zprofile
+if [ ! -f ~/.zprofile ];
+then 
+  ln -s ~/dotfiles/zprofile ~/.zprofile
+elif [ $force = true ];
+then
+  rm -i ~/.zprofile
+  ln -s ~/dotfiles/zprofile ~/.zprofile
+fi
