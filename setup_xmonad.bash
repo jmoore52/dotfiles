@@ -20,7 +20,7 @@ elif [ $force = true ];
 then
   rm -i ~/.xinitrc
   ln -s ~/dotfiles/xinitrc ~/.xinitrc
-endif
+fi
 
 if [ ! -f ~/.xmobarrc ];
 then
@@ -29,14 +29,13 @@ elif [ $force = true ];
 then
   rm -i ~/.xmobarrc
   ln -s ~/dotfiles/xmobarrc ~/.xmobarrc
-endif
+fi
 
 if [ ! -d ~/.xmonad ];
 then
   mkdir ~/.xmonad
   ln -s ~/dotfiles/xmonad.hs ~/.xmonad/xmonad.hs
-fi
-elif [ -f ~/.xmonad/xmonad.hs ];
+elif [ ! -f ~/.xmonad/xmonad.hs ];
 then
   ln -s ~/dotfiles/xmonad.hs ~/.xmonad/xmonad.hs
 elif [ $force = true ];
