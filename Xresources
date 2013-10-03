@@ -1,0 +1,4 @@
+URxvt.scrollBar: false
+URxvt.transparent: true
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
+URxvt.boldFont: xft:DejaVu Sans Mono:bold:pixelsize=12
