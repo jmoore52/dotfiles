@@ -5,6 +5,11 @@ then
   source ~/.hosts
 fi
 
+if [ -f ~/.alias ];
+then
+  source ~/.alias
+fi
+
 # set term correctly
 case "$TERM" in
   rxvt-unicode-256color)
@@ -58,16 +63,5 @@ alias gpull='git pull'
 alias ctgen='ctags -R *'
 
 alias refresh='source ~/.zshrc'
-
-# zebralite specific
-alias zl="cd ~/zebralite"
-alias ctrl="cd ~/zebralite/controller"
-alias os="cd ~/zebralite/ospf6-sibling"
-alias bs="cd ~/zebralite/bgp-sibling"
-alias pnt="cd ~/zebralite/punter"
-alias lib="cd ~/zebralite/lib"
-alias log0="cat /var/log/zebralite/ospf6_sibling_0.log"
-alias log1="cat /var/log/zebralite/ospf6_sibling_1.log"
-alias log2="cat /var/log/zebralite/ospf6_sibling_2.log"
 
 PROMPT='%1~ %m%# '
