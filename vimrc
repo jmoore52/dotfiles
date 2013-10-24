@@ -1,6 +1,8 @@
 set number
 
 let mapleader=","
+
+" Save file
 map <Leader>w :w<CR>
 
 " Reload
@@ -9,11 +11,17 @@ map <Leader>r :so $MYVIMRC<CR>
 " Open header file
 map <Leader>h :badd %<.h<CR>
 
+" Open C file
+map <Leader>h :badd %<.c<CR>
+
 " Split current window
 map <Leader>s :split<CR>
 
 " Split header file
 map <Leader>sh :split %<.h<CR>
+
+" Split C file
+map <Leader>sc :split %<.c<CR>
 
 " Permanently set statusline
 set laststatus=2
