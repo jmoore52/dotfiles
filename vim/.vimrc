@@ -48,6 +48,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'majutsushi/tagbar'
 " Bundle 'fholgado/minibufexpl.vim'
 
 " vim-scripts repos
@@ -77,6 +78,10 @@ let g:buftabs_in_statusline=1
 hi Buftabs ctermfg=Yellow ctermbg=Blue
 
 let g:buftabs_active_highlight_group="Buftabs"
+
+" Tagbar
+map <Leader>tb :TagbarToggle<CR>
+let g:tagbar_autoclose=1
 
 " Ctags
 set tags=./tags;/
