@@ -15,7 +15,7 @@ map <Leader>h :badd %<.h<CR>
 map <Leader>h :badd %<.c<CR>
 
 " Split current window
-map <Leader>s :split<CR>
+map <Leader>ss :split<CR>
 
 " Split header file
 map <Leader>sh :split %<.h<CR>
@@ -30,6 +30,12 @@ set laststatus=2
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+
+" copy or change search hit -- http://vim.wikia.com/wiki/Copy_or_change_search_hit
+" Make a simple "search" text object.
+vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap s :normal vs<CR>
 
 " Vundle config 
 set nocompatible               " be iMproved
@@ -50,6 +56,11 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'majutsushi/tagbar'
 " Bundle 'fholgado/minibufexpl.vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+" Optional package exposes the snippets
+Bundle 'honza/vim-snippets'
 
 " vim-scripts repos
 " Bundle 'FuzzyFinder'
