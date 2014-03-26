@@ -1,23 +1,18 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
-import XMonad.Util.Paste
+import XMonad.Util.EZConfig
 
-import qualified Data.Map        as M
+import Common  -- user defined module
 
-main = do
-  xmonad =<< xmobar defaultConfig
-    { terminal    = "urxvt"
-    , layoutHook  = avoidStruts $ layoutHook defaultConfig
-    , manageHook  = manageHook defaultConfig <+> manageDocks
-    , modMask     = mod4Mask
-    , keys        = myKeys <+> keys defaultConfig
-    , borderWidth = 3
-    }
-
-------------------------------------------------------------------------
----- Key bindings. Add, modify or remove key bindings here.
-----
-myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
-    -- X-selection-paste buffer
-    [ ((modm, xK_y), pasteSelection) ]
+main = do 
+   cfg <- xmobar $ defaultConfig
+      { terminal    = "urxvt"
+      , layoutHook  = avoidStruts $ layoutHook defaultConfig
+      , manageHook  = manageHook defaultConfig <+> manageDocks
+      , modMask     = Common.mainMod
+      , workspaces  = Common.myWorkspaces
+      , keys        = keys defaultConfig
+      , borderWidth = 3
+      }  `additionalKeys` Common.myKeys
+   xmonad cfg
