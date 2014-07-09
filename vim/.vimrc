@@ -41,35 +41,37 @@ omap s :normal vs<CR>
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " My Bundles here:
 "
 
 " original repos on github
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'majutsushi/tagbar'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'majutsushi/tagbar'
 " Bundle 'fholgado/minibufexpl.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 " Optional package exposes the snippets
-Bundle 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
 
 " vim-scripts repos
 " Bundle 'FuzzyFinder'
-Bundle 'buftabs'
+Plugin 'buftabs'
 
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
+call vundle#end()
 filetype plugin indent on     " required!
 "
 " Brief help
