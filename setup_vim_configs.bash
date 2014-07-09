@@ -20,10 +20,10 @@ cd ~/.vim
 
 if [ ! -d bundle/vundle ];
 then
-  git clone https://github.com/gmarik/vundle bundle/vundle
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 elif [ $force = true ];
 then
   rm -ri bundle/vundle
-  git clone https://github.com/gmarik/vundle bundle/vundle
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
