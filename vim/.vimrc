@@ -12,7 +12,7 @@ map <Leader>r :so $MYVIMRC<CR>
 map <Leader>h :badd %<.h<CR>
 
 " Open C file
-map <Leader>h :badd %<.c<CR>
+map <Leader>c :badd %<.c<CR>
 
 " Split current window
 map <Leader>ss :split<CR>
