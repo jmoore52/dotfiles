@@ -12,7 +12,7 @@ map <Leader>r :so $MYVIMRC<CR>
 map <Leader>h :badd %<.h<CR>
 
 " Open C file
-map <Leader>h :badd %<.c<CR>
+map <Leader>c :badd %<.c<CR>
 
 " Split current window
 map <Leader>ss :split<CR>
@@ -41,45 +41,48 @@ omap s :normal vs<CR>
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " My Bundles here:
 "
 
 " original repos on github
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'majutsushi/tagbar'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'majutsushi/tagbar'
 " Bundle 'fholgado/minibufexpl.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 " Optional package exposes the snippets
-Bundle 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
 
 " vim-scripts repos
 " Bundle 'FuzzyFinder'
-Bundle 'buftabs'
+Plugin 'buftabs'
 
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
+call vundle#end()
 filetype plugin indent on     " required!
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" Put your non-Plugin stuff after this line
+
 
 " buftabs configs
 let g:buftabs_only_basename=1
