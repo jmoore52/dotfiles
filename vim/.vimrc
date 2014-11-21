@@ -7,7 +7,7 @@ map <Leader>w :w<CR>
 
 " Reload
 map <Leader>r :so $MYVIMRC<CR>
-
+ 
 " Open header file
 map <Leader>h :badd %<.h<CR>
 
@@ -25,6 +25,11 @@ map <Leader>sc :split %<.c<CR>
 
 " Permanently set statusline
 set laststatus=2
+
+" Turn Paste on and off
+nnoremap <Leader>p :set invpaste paste?<CR>
+set pastetoggle=<Leader>p
+set showmode
 
 " indentation -- http://vim.wikia.com/wiki/Indenting_source_code
 set expandtab
