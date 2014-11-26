@@ -15,6 +15,10 @@ case "$TERM" in
   rxvt-unicode-256color)
     TERM=rxvt-unicode
     ;;
+
+  screen)
+    TERM=rxvt-unicode
+    ;;
 esac
 
 # set env to include dotfiles dir
