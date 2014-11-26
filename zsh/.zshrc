@@ -64,4 +64,11 @@ alias ctgen='ctags -R *'
 
 alias refresh='source ~/.zshrc'
 
+# tab completion
+setopt menu_complete
+
+zmodload zsh/complist
+autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+
 PROMPT='%1~ %m%# '
