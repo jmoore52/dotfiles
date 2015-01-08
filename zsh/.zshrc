@@ -50,8 +50,10 @@ alias v='vim'
 
 # tmux
 alias t='tmux'
+alias tn='tmux new -s'
 alias ta='tmux attach'
 alias tl='tmux ls'
+alias tr='tmux rename -t'
 
 # git
 alias g='git'

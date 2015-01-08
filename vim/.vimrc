@@ -58,23 +58,23 @@ Plugin 'gmarik/vundle'
 "
 
 " original repos on github
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'majutsushi/tagbar'
+Plugin 'kien/ctrlp.vim' " Ctrl+P to open file by name in different buffer
+Plugin 'tpope/vim-unimpaired' " makes switching between tabs easier
+Plugin 'majutsushi/tagbar' " use <Leader>tb to look at functions within file
 " Bundle 'fholgado/minibufexpl.vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+Plugin 'MarcWeber/vim-addon-mw-utils' " dependancy for vim-snipmate
+Plugin 'tomtom/tlib_vim' " dependancy for vim-snipmate
+Plugin 'garbas/vim-snipmate' " automatic insertion of code blocks by leading keywords
 " Optional package exposes the snippets
-Plugin 'honza/vim-snippets'
+Plugin 'honza/vim-snippets' " database of snippets for vim-snipmate
 
 " vim-scripts repos
-" Bundle 'FuzzyFinder'
-Plugin 'buftabs'
+" Bundle 'FuzzyFinder' " alternative to CtrlP
+Plugin 'buftabs' " shows the buffers you have open in status bar
 
 " non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
-" ...
+" Bundle 'git://git.wincent.com/command-t.git' " yet another alternative to
+                                               " Ctrl P
 
 call vundle#end()
 filetype plugin indent on     " required!
