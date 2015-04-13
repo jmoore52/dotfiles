@@ -52,7 +52,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " My Bundles here:
 "
@@ -67,6 +67,8 @@ Plugin 'tomtom/tlib_vim' " dependancy for vim-snipmate
 Plugin 'garbas/vim-snipmate' " automatic insertion of code blocks by leading keywords
 " Optional package exposes the snippets
 Plugin 'honza/vim-snippets' " database of snippets for vim-snipmate
+
+Plugin 'ludovicchabant/vim-gutentags' " manages ctags files
 
 " vim-scripts repos
 " Bundle 'FuzzyFinder' " alternative to CtrlP
