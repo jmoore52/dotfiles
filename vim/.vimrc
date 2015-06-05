@@ -36,10 +36,11 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
-" copy or change search hit -- http://vim.wikia.com/wiki/Copy_or_change_search_hit
+" copy or change search hit --
+" http://vim.wikia.com/wiki/Copy_or_change_search_hit
 " Make a simple "search" text object.
 vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
-    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
 
 " Vundle config 
@@ -52,7 +53,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " My Bundles here:
 "
@@ -68,9 +69,13 @@ Plugin 'garbas/vim-snipmate' " automatic insertion of code blocks by leading key
 " Optional package exposes the snippets
 Plugin 'honza/vim-snippets' " database of snippets for vim-snipmate
 
+Plugin 'ludovicchabant/vim-gutentags' " manages ctags files
+
+Plugin 'bling/vim-airline' "statusline
 " vim-scripts repos
 " Bundle 'FuzzyFinder' " alternative to CtrlP
-Plugin 'buftabs' " shows the buffers you have open in status bar
+" Plugin 'buftabs' " shows the buffers you have open in status bar (airline
+" can do the the same)
 
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git' " yet another alternative to
@@ -88,15 +93,16 @@ filetype plugin indent on     " required!
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+let g:airline#extensions#tabline#enabled = 1
 
 " buftabs configs
-let g:buftabs_only_basename=1
-let g:buftabs_in_statusline=1
+"let g:buftabs_only_basename=1
+"let g:buftabs_in_statusline=1
 
 " Custom highlight group
-hi Buftabs ctermfg=Yellow ctermbg=Blue
+"hi Buftabs ctermfg=Yellow ctermbg=Blue
 
-let g:buftabs_active_highlight_group="Buftabs"
+"let g:buftabs_active_highlight_group="Buftabs"
 
 " Tagbar
 map <Leader>tb :TagbarToggle<CR>
