@@ -49,6 +49,7 @@ then
 elif [ $uname = "Darwin" ];
 then
   alias ls='ls -G'
+  alias vim="/usr/local/bin/vim" # use macvim instead of default vim
 fi
 
 alias l='ls'

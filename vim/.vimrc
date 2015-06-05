@@ -71,7 +71,10 @@ Plugin 'honza/vim-snippets' " database of snippets for vim-snipmate
 
 Plugin 'ludovicchabant/vim-gutentags' " manages ctags files
 
-Plugin 'bling/vim-airline' "statusline
+Plugin 'bling/vim-airline' " statusline
+
+Plugin 'Valloric/YouCompleteMe' " command completion
+
 " vim-scripts repos
 " Bundle 'FuzzyFinder' " alternative to CtrlP
 " Plugin 'buftabs' " shows the buffers you have open in status bar (airline
