@@ -1,4 +1,15 @@
 #source /etc/profile
+source ~/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle tmux
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen theme ecks/minimal minimal-path-host
+antigen apply
+
 
 if [ -f ~/.hosts ];
 then
@@ -50,21 +61,11 @@ alias v='vim'
 
 # tmux
 alias t='tmux'
-alias tn='tmux new -s'
+alias tn='tmux new -s' # create target session by name
 alias ta='tmux attach'
+alias tat='tmux attach -t' # tmux attach to target session
 alias tl='tmux ls'
 alias tr='tmux rename -t'
-
-# git
-alias g='git'
-alias ga='git add'
-alias gb='git branch'
-alias gc='git commit -a -m'
-alias gd='git diff --color'
-alias gs='git status | less'
-alias gl='git log'
-alias gpush='git push'
-alias gpull='git pull'
 
 alias ctgen='ctags -R *'
 
@@ -77,4 +78,4 @@ zmodload zsh/complist
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
-PROMPT='%1~ %m%# '
+#PROMPT='%1~ %m%# '
