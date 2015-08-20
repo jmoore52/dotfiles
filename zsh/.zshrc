@@ -43,6 +43,9 @@ export PATH=${PATH}:~/dotfiles
 # change directory without "cd" command
 setopt auto_cd
 
+# don't share history between different tmux sessions
+setopt nosharehistory
+
 alias -s c=vim
 alias -s h=vim
 
