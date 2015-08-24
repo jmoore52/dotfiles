@@ -113,3 +113,6 @@ let g:tagbar_autoclose=1
 
 " Ctags
 set tags=./tags;/
+
+" Dark Background
+set background=dark
