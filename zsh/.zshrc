@@ -31,9 +31,9 @@ case "$TERM" in
     TERM=rxvt-unicode
     ;;
 
-  *)
-    TERM=rxvt-unicode
-    ;;
+#  *)
+#    TERM=rxvt-unicode
+#    ;;
 
 esac
 
