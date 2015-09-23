@@ -36,6 +36,7 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+syntax on
 " copy or change search hit --
 " http://vim.wikia.com/wiki/Copy_or_change_search_hit
 " Make a simple "search" text object.
@@ -43,37 +44,43 @@ vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
      \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
 
-" Vundle config 
-set nocompatible               " be iMproved
-filetype off                   " required!
+"NeoBundle Scripts-----------------------------
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+  " Required:
+  set runtimepath+=/Users/hasenov/.vim/bundle/neobundle.vim/
+endif
 
-" let Vundle manage Vundle
-" required! 
-Plugin 'gmarik/Vundle.vim'
+" Required:
+call neobundle#begin(expand('/Users/hasenov/.vim/bundle'))
 
-" My Bundles here:
-"
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Add or remove your Bundles here:
+"NeoBundle 'tpope/vim-fugitive' " integrate vim with git
+NeoBundle 'flazz/vim-colorschemes' " different colorschemes
 
 " original repos on github
-Plugin 'kien/ctrlp.vim' " Ctrl+P to open file by name in different buffer
-Plugin 'tpope/vim-unimpaired' " makes switching between tabs easier
-Plugin 'majutsushi/tagbar' " use <Leader>tb to look at functions within file
+NeoBundle 'kien/ctrlp.vim' " Ctrl+P to open file by name in different buffer
+NeoBundle 'tpope/vim-unimpaired' " makes switching between tabs easier
+NeoBundle 'majutsushi/tagbar' " use <Leader>tb to look at functions within file
 " Bundle 'fholgado/minibufexpl.vim'
-Plugin 'MarcWeber/vim-addon-mw-utils' " dependancy for vim-snipmate
-Plugin 'tomtom/tlib_vim' " dependancy for vim-snipmate
-Plugin 'garbas/vim-snipmate' " automatic insertion of code blocks by leading keywords
+NeoBundle 'MarcWeber/vim-addon-mw-utils' " dependancy for vim-snipmate
+NeoBundle 'tomtom/tlib_vim' " dependancy for vim-snipmate
+NeoBundle 'garbas/vim-snipmate' " automatic insertion of code blocks by leading keywords
 " Optional package exposes the snippets
-Plugin 'honza/vim-snippets' " database of snippets for vim-snipmate
+NeoBundle 'honza/vim-snippets' " database of snippets for vim-snipmate
 
-Plugin 'ludovicchabant/vim-gutentags' " manages ctags files
+NeoBundle 'ludovicchabant/vim-gutentags' " manages ctags files
 
-Plugin 'bling/vim-airline' " statusline
+NeoBundle 'bling/vim-airline' " statusline
 
-Plugin 'Valloric/YouCompleteMe' " command completion
+NeoBundle 'Valloric/YouCompleteMe' " command completion
 
 " vim-scripts repos
 " Bundle 'FuzzyFinder' " alternative to CtrlP
@@ -84,17 +91,16 @@ Plugin 'Valloric/YouCompleteMe' " command completion
 " Bundle 'git://git.wincent.com/command-t.git' " yet another alternative to
                                                " Ctrl P
 
-call vundle#end()
-filetype plugin indent on     " required!
-"
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+" Required:
+call neobundle#end()
 
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+"End NeoBundle Scripts-------------------------
 
 let g:airline#extensions#tabline#enabled = 1
 
@@ -114,5 +120,5 @@ let g:tagbar_autoclose=1
 " Ctags
 set tags=./tags;/
 
-" Dark Background
-set background=dark
+syntax on
+colorscheme candycode
