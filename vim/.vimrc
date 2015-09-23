@@ -120,5 +120,7 @@ let g:tagbar_autoclose=1
 " Ctags
 set tags=./tags;/
 
+" enable 256 colors in vim
+set t_Co=256
 syntax on
 colorscheme candycode
