@@ -81,6 +81,7 @@ NeoBundle 'ludovicchabant/vim-gutentags' " manages ctags files
 NeoBundle 'bling/vim-airline' " statusline
 
 NeoBundle 'Valloric/YouCompleteMe' " command completion
+NeoBundle 'rdnetto/YCM-Generator' " generates the .ycm_extra_conf.py file needed for YouCompleteMe
 
 " vim-scripts repos
 " Bundle 'FuzzyFinder' " alternative to CtrlP

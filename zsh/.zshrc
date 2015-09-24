@@ -28,7 +28,7 @@ case "$TERM" in
     ;;
 
   screen)
-    TERM=rxvt-unicode
+    TERM=screen-256color
     ;;
 
 #  *)
@@ -69,6 +69,7 @@ alias p='pwd'
 alias v='vim'
 
 # tmux
+#alias tmux='tmux -2' # enable 256 colors
 alias t='tmux'
 alias tn='tmux new -s' # create target session by name
 alias ta='tmux attach'
