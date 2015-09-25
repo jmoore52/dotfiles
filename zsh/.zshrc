@@ -16,6 +16,7 @@ antigen use oh-my-zsh
 
 antigen bundle git
 antigen bundle tmux
+antigen bundle tmuxinator
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen theme ecks/minimal minimal-path-host
