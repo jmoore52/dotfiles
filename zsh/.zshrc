@@ -1,4 +1,15 @@
 #source /etc/profile
+
+if [ -f ~/.hosts ];
+then
+  source ~/.hosts
+fi
+
+if [ -f ~/.alias ];
+then
+  source ~/.alias
+fi
+
 source ~/antigen/antigen.zsh
 
 antigen use oh-my-zsh
@@ -10,16 +21,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme ecks/minimal minimal-path-host
 antigen apply
 
-
-if [ -f ~/.hosts ];
-then
-  source ~/.hosts
-fi
-
-if [ -f ~/.alias ];
-then
-  source ~/.alias
-fi
 
 # set term correctly
 case "$TERM" in
