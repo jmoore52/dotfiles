@@ -1,16 +1,4 @@
 #source /etc/profile
-source ~/antigen/antigen.zsh
-
-antigen use oh-my-zsh
-
-antigen bundle git
-antigen bundle tmux
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle autojump
-
-antigen theme ecks/minimal minimal-path-host
-antigen apply
-
 
 if [ -f ~/.hosts ];
 then
@@ -21,6 +9,20 @@ if [ -f ~/.alias ];
 then
   source ~/.alias
 fi
+
+source ~/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle tmux
+antigen bundle tmuxinator
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle autojump
+
+antigen theme ecks/minimal minimal-path-host
+antigen apply
+
 
 # set term correctly
 case "$TERM" in
