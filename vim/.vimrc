@@ -1,4 +1,7 @@
+" General
 set number
+set lazyredraw " redraw only when we need to. 
+set showmatch " highlight matching [{()}]
 
 let mapleader=","
 
@@ -23,6 +26,13 @@ map <Leader>sh :split %<.h<CR>
 " Split C file
 map <Leader>sc :split %<.c<CR>
 
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" highlight last inserted text
+nnoremap gV `[v`]
+
 " Permanently set statusline
 set laststatus=2
 
@@ -32,11 +42,23 @@ set pastetoggle=<Leader>p
 set showmode
 
 " indentation -- http://vim.wikia.com/wiki/Indenting_source_code
-set expandtab
-set shiftwidth=2
-set softtabstop=2
+set expandtab " turns tabs into spaces
+set shiftwidth=2 " when using << or >> how many spaces will be shifted over
+set tabstop=2       " number of visual spaces per TAB
+set softtabstop=2 " number of spaces in tab when editing
+
+set cursorline
+filetype indent on
 
 syntax on
+
+" Searching
+set incsearch " search as characters are entered
+set hlsearch " highlight matches
+
+" turn off search highlight
+nnoremap <Leader><space> :nohlsearch<CR>
+
 " copy or change search hit --
 " http://vim.wikia.com/wiki/Copy_or_change_search_hit
 " Make a simple "search" text object.
@@ -83,6 +105,7 @@ NeoBundle 'bling/vim-airline' " statusline
 NeoBundle 'Valloric/YouCompleteMe' " command completion
 NeoBundle 'rdnetto/YCM-Generator' " generates the .ycm_extra_conf.py file needed for YouCompleteMe
 
+NeoBundle 'sjl/gundo.vim' " visualize your vim undo tree
 " vim-scripts repos
 " Bundle 'FuzzyFinder' " alternative to CtrlP
 " Plugin 'buftabs' " shows the buffers you have open in status bar (airline
@@ -117,6 +140,9 @@ let g:airline#extensions#tabline#enabled = 1
 " Tagbar
 map <Leader>tb :TagbarToggle<CR>
 let g:tagbar_autoclose=1
+
+" toggle gundo
+nnoremap <Leader>u :GundoToggle<CR>
 
 " Ctags
 set tags=./tags;/

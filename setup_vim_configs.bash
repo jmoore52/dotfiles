@@ -18,12 +18,12 @@ fi
 
 cd ~/.vim
 
-if [ ! -d bundle/vundle ];
+if [ ! -d bundle/neobundle.vim ];
 then
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
 elif [ $force = true ];
 then
-  rm -r bundle/vundle
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  rm -r bundle/neobundle.vim
+  git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
 fi
 
