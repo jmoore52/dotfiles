@@ -1,5 +1,6 @@
 " General
 set number
+set relativenumber
 set lazyredraw " redraw only when we need to. 
 set showmatch " highlight matching [{()}]
 
@@ -90,6 +91,9 @@ NeoBundle 'flazz/vim-colorschemes' " different colorschemes
 " original repos on github
 NeoBundle 'kien/ctrlp.vim' " Ctrl+P to open file by name in different buffer
 NeoBundle 'tpope/vim-unimpaired' " makes switching between tabs easier
+NeoBundle 'tpope/vim-surround' " cs to change surrounding text
+NeoBundle 'tpope/vim-commentary' " comment out blocks of text
+NeoBundle 'vim-scripts/ReplaceWithRegister' " replace word with register
 NeoBundle 'majutsushi/tagbar' " use <Leader>tb to look at functions within file
 " Bundle 'fholgado/minibufexpl.vim'
 NeoBundle 'MarcWeber/vim-addon-mw-utils' " dependancy for vim-snipmate
