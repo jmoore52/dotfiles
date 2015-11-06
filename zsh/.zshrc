@@ -71,6 +71,9 @@ alias p='pwd'
 
 alias v='nvim'
 
+# set to vim mode
+bindkey -v
+
 # tmux
 #alias tmux='tmux -2' # enable 256 colors
 alias t='tmux'
