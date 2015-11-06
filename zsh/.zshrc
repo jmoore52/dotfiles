@@ -60,7 +60,7 @@ then
 elif [ $uname = "Darwin" ];
 then
   alias ls='ls -G'
-  alias vim="/usr/local/bin/vim" # use macvim instead of default vim
+  alias vim="/usr/local/bin/nvim" # use nvim instead of default vim
 fi
 
 alias l='ls'
@@ -69,7 +69,7 @@ alias la='ls -a'
 
 alias p='pwd'
 
-alias v='vim'
+alias v='nvim'
 
 # tmux
 #alias tmux='tmux -2' # enable 256 colors
