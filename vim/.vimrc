@@ -67,79 +67,63 @@ vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
      \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
 
-"NeoBundle Scripts-----------------------------
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+"Dein Scripts-----------------------------
+if &compatible
+  set nocompatible 
 endif
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle'))
 
-" Let NeoBundle manage NeoBundle
 " Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+set runtimepath+=~/.config/vim/repos/github.com/Shougo/dein.vim
 
-" Add or remove your Bundles here:
-"NeoBundle 'tpope/vim-fugitive' " integrate vim with git
-NeoBundle 'flazz/vim-colorschemes' " different colorschemes
+" Required:
+call dein#begin('~/.config/vim')
+
+" " Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+"dein 'tpope/vim-fugitive' " integrate vim with git
+call dein#add('flazz/vim-colorschemes') " different colorschemes
 
 " original repos on github
-NeoBundle 'kien/ctrlp.vim' " Ctrl+P to open file by name in different buffer
-NeoBundle 'tpope/vim-unimpaired' " makes switching between tabs easier
-NeoBundle 'tpope/vim-surround' " cs to change surrounding text
-NeoBundle 'tpope/vim-commentary' " comment out blocks of text
-NeoBundle 'vim-scripts/ReplaceWithRegister' " replace word with register
-NeoBundle 'majutsushi/tagbar' " use <Leader>tb to look at functions within file
-" Bundle 'fholgado/minibufexpl.vim'
-NeoBundle 'MarcWeber/vim-addon-mw-utils' " dependancy for vim-snipmate
-NeoBundle 'tomtom/tlib_vim' " dependancy for vim-snipmate
-NeoBundle 'garbas/vim-snipmate' " automatic insertion of code blocks by leading keywords
+call dein#add('tpope/vim-unimpaired') " makes switching between tabs easier
+call dein#add('tpope/vim-surround') " cs to change surrounding text
+call dein#add('tpope/vim-commentary') " comment out blocks of text
+call dein#add('vim-scripts/ReplaceWithRegister') " replace word with register
+call dein#add('majutsushi/tagbar') " use <Leader>tb to look at functions within file
+call dein#add('MarcWeber/vim-addon-mw-utils') " dependancy for vim-snipmate
+call dein#add('tomtom/tlib_vim') " dependancy for vim-snipmate
+call dein#add('garbas/vim-snipmate') " automatic insertion of code blocks by leading keywords
 " Optional package exposes the snippets
-NeoBundle 'honza/vim-snippets' " database of snippets for vim-snipmate
+call dein#add('honza/vim-snippets') " database of snippets for vim-snipmate
 
-NeoBundle 'ludovicchabant/vim-gutentags' " manages ctags files
+" fills up hdd
+" call dein#add 'ludovicchabant/vim-gutentags' " manages ctags files
 
-NeoBundle 'bling/vim-airline' " statusline
+call dein#add('bling/vim-airline') " statusline
 
-NeoBundle 'Valloric/YouCompleteMe' " command completion
-NeoBundle 'rdnetto/YCM-Generator' " generates the .ycm_extra_conf.py file needed for YouCompleteMe
+call dein#add('sjl/gundo.vim') " visualize your vim undo tree
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('zchee/deoplete-jedi')
 
-NeoBundle 'sjl/gundo.vim' " visualize your vim undo tree
-" vim-scripts repos
-" Bundle 'FuzzyFinder' " alternative to CtrlP
-" Plugin 'buftabs' " shows the buffers you have open in status bar (airline
-" can do the the same)
-
-" non github repos
-" Bundle 'git://git.wincent.com/command-t.git' " yet another alternative to
-                                               " Ctrl P
+call dein#add('Shougo/denite.nvim')
+call dein#add('neomake/neomake')
 
 " Required:
-call neobundle#end()
+call dein#end()
 
 " Required:
 filetype plugin indent on
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
 
 let g:airline#extensions#tabline#enabled = 1
-
-" buftabs configs
-"let g:buftabs_only_basename=1
-"let g:buftabs_in_statusline=1
-
-" Custom highlight group
-"hi Buftabs ctermfg=Yellow ctermbg=Blue
-
-"let g:buftabs_active_highlight_group="Buftabs"
 
 " Tagbar
 map <Leader>tb :TagbarToggle<CR>
@@ -151,7 +135,20 @@ nnoremap <Leader>u :GundoToggle<CR>
 " Ctags
 set tags=./tags;/
 
+" look up docs for unimpaired
+map <Leader>uh :help unimpaired<CR>
+
+" open file buffer
+map <Leader>f :Denite file_rec<CR>
+
 " enable 256 colors in vim
 set t_Co=256
 syntax on
 colorscheme candycode
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+" Neomake linter
+autocmd! BufWritePost * Neomake
+let g:neomake_python_enabled_makers = ['flake8']

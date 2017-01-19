@@ -10,6 +10,11 @@ then
   source ~/.alias
 fi
 
+if [ -f ~/.functions ];
+then
+  source ~/.functions
+fi
+
 source ~/antigen/antigen.zsh
 
 antigen use oh-my-zsh
@@ -23,6 +28,7 @@ antigen bundle autojump
 antigen theme ecks/minimal minimal-path-host
 antigen apply
 
+export ZSH_THEME="minimal-path-host"
 
 # set term correctly
 case "$TERM" in
@@ -95,3 +101,5 @@ autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
 #PROMPT='%1~ %m%# '
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
